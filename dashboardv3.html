@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesV3.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <title>Dashboard V3</title>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar active">
+            <div class="menu-btn">
+                <i class='bx bxs-chevron-left'></i>
+            </div>
+            <div class="head">
+                <div class="user-img">
+                    <img src="img/ppu.png" alt="">
+                </div>
+                <div class="user-details">
+                    <p class="name"> <b>P</b>rogramming <br> <b>P</b>ioneers <br><b>U</b>niversity</p>
+                </div>
+            </div>
+            <div class="nav">
+                <div class="menu">
+                    <p class="title">Main</p>
+                    <ul>
+                        <li>
+                            <a href="">
+                                <i class='icon bx bxs-dashboard'></i>                                
+                                <span class="text">Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <i class='icon bx bxs-dashboard'></i>                                
+                                <span class="text">Academics</span>
+                                <i class='arrow bx bxs-chevron-down'></i>                            
+                            </a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="#">
+                                        <span class="text">Courses</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="text">Grades</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="text">Course Material</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="text">Class  SChedule</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="text">Registation</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="active">
+                            <a href="">
+                                <i class='icon bx bx-money'></i>                                
+                                <span class="text">Financial</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <i class='icon bx bx-library' ></i>
+                                <span class="text">Library</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <i class='icon bx bxs-dashboard'></i>                                
+                                <span class="text">Communication</span>
+                                <i class='arrow bx bxs-chevron-down'></i>                            
+                            </a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="#">
+                                        <span class="text">Messages</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="text">Announcements</span>
+                                    </a>
+                                </li>     
+                            </ul>
+                        </li>
+                       
+                        <li>
+                            <a href="">
+                                <i class='icon bx bxs-dashboard'></i>                                
+                                <span class="text">Campus Life</span>
+                                <i class='arrow bx bxs-chevron-down'></i>                            
+                            </a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="#">
+                                        <span class="text">Clubs and Oragnizations</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="text">Events</span>
+                                    </a>
+                                </li>     
+                            </ul>
+                        </li>
+                    </ul> 
+                </div>
+            </div>
+            
+           
+    </div>
+    <div class="content">
+        <!-- Dashboard Content -->
+        <div class="header">
+            <div class="search">
+                <input type="text" name="search" id="search" placeholder="search">
+                <i class='bx bx-search'></i>
+            </div>
+            <div class="right-icons">
+                <i class='bx bx-bell'></i>
+                <span class="count">12</span>
+            </div>
+        </div>
+        <div class="dashboard-content">
+            <div class="welcome">
+                <h2>Welcome to Your Dashboard, Johnny Bravo!</h2>
+                <small class="text-muted">Stay Updated to your Student Portal</small>
+            </div>
+           
+            <div class="announcements">
+                <h1>Announcement</h1>
+                <div class="updates">
+                    <div class="update">
+                        <div class="profile-photo">
+                            <img src="img/ppu-removebg-preview.png">
+                        </div>
+                        <div class="message">
+                            <p><b>Advisory: </b>Walang pasok Bukas
+                            </p>
+                            <small class="text-muted">1 hr ago</small>
+                        </div>
+                    </div>
+                    
+                    <div class="update">
+                        <div class="profile-photo">
+                            <img src="img/ppu.png">
+                        </div>
+                        <div class="message">
+                            <p><b>School:</b>We have Incoming event this November!</p>
+                            <small class="text-muted">2d ago</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             
+        </div>
+        <main> 
+            <div class="headers">
+                <h1>To Do</h1> <!-- Insights -->
+                <div class="date">
+                    <label for="todo-date"></label>
+                    <input type="date" id="todo-date">
+                </div>
+            </div>
+            <ul class="insights">  
+                <li>
+                    <i class='bx bx-list-ol'></i>
+                    <span class="info">
+                        <h3>
+                            6
+                        </h3>
+                        <p>Assigned</p>
+                    </span>
+                </li>
+                <li><i class='bx bx-task-x' ></i>
+                    <span class="info">
+                        <h3>
+                            3
+                        </h3>
+                        <p>Missing</p>
+                    </span>
+                </li>
+                <li><i class='bx bx-task' ></i>
+                    <span class="info">
+                        <h3>
+                            26
+                        </h3>
+                        <p>Done</p>
+                    </span>
+                </li>
+                
+            </ul>
+            <div class="bottom-data">
+                <div class="orders">
+                    <div class="head">
+                        <i class='bx bx-receipt'></i>
+                        <h3>Recent Activities</h3>
+                        <i class='bx bx-filter'></i>
+                        <i class='bx bx-search' ></i>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>User</th>
+                                <th>Due Date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <img src="img/graduation-1345143_1280.png">
+                                    <p>Johnny Bravo</p>
+                                </td>
+                                <td>14-08-2023</td>
+                                <td><span class="status completed">Completed</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="img/graduation-1345143_1280.png">
+                                    <p>Johnny Bravo</p>
+                                </td>
+                                <td>14-08-2023</td>
+                                <td><span class="status pending">Pending</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="img/graduation-1345143_1280.png">
+                                    <p>Johnny Bravo</p>
+                                </td>
+                                <td>14-08-2023</td>
+                                <td><span class="status process">Processing</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Reminders -->
+                <div class="reminders">
+                    <div class="head">
+                        <i class='bx bx-note'></i>
+                        <h3>Reminders</h3>
+                        <i class='bx bx-filter'></i>
+                        <i class='bx bx-plus'></i>
+                    </div>
+                    <ul class="task-list">
+                        <li class="completed">
+                            <div class="task-title">
+                                <i class='bx bx-check-circle'></i>
+                                <p>Start Our Meeting</p>
+                            </div>
+                            <i class='bx bx-dots-vertical-rounded'></i>
+                        </li>
+                        <li class="completed">
+                            <div class="task-title">
+                                <i class='bx bx-check-circle'></i>
+                                <p>2nd Installment</p>
+                            </div>
+                            <i class='bx bx-dots-vertical-rounded'></i>
+                        </li>
+                        <li class="not-completed">
+                            <div class="task-title">
+                                <i class='bx bx-x-circle'></i>
+                                <p>Midterm Exam</p>
+                            </div>
+                            <i class='bx bx-dots-vertical-rounded'></i>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- End of Reminders-->
+
+            </div>
+
+            </main>
+          
+    </div>
+    <div class="action">
+        <div class="profile" onclick="menuToggle();">
+            <img src="img/graduation-1345143_1280.png" alt="">
+        </div>
+        <div class="profile-menu">
+            <h3> Johnny bravo 
+                <div>
+                    Student 
+                </div>
+            </h3>
+            <ul>
+                <li>                              
+                    <span class='icon bx bx-user'></span>
+                    <a href="">Profile</a>
+                </li>
+                <li>
+                    <span class='icon bx bx-cog'></span>
+                    <a href="">Setting</a>
+                </li>
+                <li>
+                    <span class='icon bx bx-help-circle'></span>
+                    <a href="">Help</a>
+                </li>
+                <li>
+                    <span class='icon bx bx-log-out'></span>
+                    <a href="login_form.html">Log Out</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script> const menuBtn = $('.menu-btn');
+        const sidebar = $('.sidebar');
+      
+        menuBtn.on('click', function () {
+          sidebar.toggleClass('active');
+        });
+        $(".menu > ul > li").click(function (e) {
+            e.preventDefault();
+            const listItem = $(this);
+            const subMenu = listItem.find("ul.sub-menu");
+          
+            // Toggle the "active" class on the clicked list item
+            listItem.toggleClass("active");
+          
+            // Toggle the visibility of the sub-menu within the clicked list item
+            subMenu.slideToggle();
+          
+            // Close other sub-menus
+            $(".menu > ul > li").not(listItem).removeClass("active").find("ul.sub-menu").slideUp();
+          });
+    function menuToggle () {
+      const toggleMenu = document.querySelector('.profile-menu');
+      toggleMenu.classList.toggle('active')
+    }
+    const themeToggler = document.querySelector(".theme-toggler");
+    </script>
+</body>
+</html>

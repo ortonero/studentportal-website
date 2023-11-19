@@ -1,0 +1,617 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+*{
+    margin:0 ;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+body {
+    background: #dddddd;
+}
+.container {
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 100px 1fr;
+}
+
+/*================================================Sidebar==============================================*/
+.sidebar {
+    position: relative;
+    width: 256px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: white;
+    padding: 24px;
+    border-radius: 30px;
+    transition: all 0.3s;
+}
+.sidebar .head {
+    display: flex;
+    gap: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f6f6f6;
+}
+.user-img {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.user-img img{
+    width: 100%;
+    object-fit: cover;
+}
+.user-details .title ,.menu .title  {
+    font-size: 10px;
+    font-weight: 500;
+    color: #757575;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+.user-details .name {
+    font-size: 14px;
+    font-weight: 500;
+}
+.nav {
+    flex: 1;
+}
+.menu ul li {
+    position: relative;
+    list-style: none;
+    margin-bottom: 5px;
+}
+.menu ul li a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #757575;
+    text-decoration: none;
+    padding: 12px 8px;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+.menu ul li > a:hover,
+.menu ul li .active > a {
+    color: #000;
+    background-color: #f6f6f6;
+}
+.menu ul li .icon {
+    font-size: 20px;
+}
+.menu ul li .text {
+    flex: 1;
+}
+.menu ul li .arrow {
+    font-size: 14px;
+    transition: all 0.3s;
+}
+.menu ul li.active .arrow {
+    transform: rotate(180deg);
+}
+.menu .sub-menu {
+    display: none;
+    margin-left: 20px;
+    padding-left: 20px;
+    padding-top: 5px;
+    border-left: 1px solid #f6f6f6;
+}
+.menu .sub-menu li a {
+    padding: 10px 8px;
+    font-size: 12px;
+}
+
+.menu:not(:last-child) {
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #f6f6f6;   
+}
+.menu-btn {
+    position: absolute;
+    right: -14px;
+    top: 3.5%;
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    cursor: pointer;
+    color: #757575;
+    border: 2px solid #f6f6f6;
+    box-shadow:  0 2rem 3rem  rgba(132, 139, 200, 0.18);
+
+}
+
+.menu-btn:hover i {
+    color: #000;
+}
+.menu-btn i {
+    transition: all 0.3s;
+}
+ .sidebar.active {
+    width: 92px;
+}
+.sidebar.active .menu-btn i {
+    transform: rotate(180deg);
+}
+.sidebar.active .user-details {
+    display: none;
+}
+.sidebar.active .menu .title {
+    text-align: center;
+}
+.sidebar.active .menu ul li .arrow {
+    display: none;
+}
+.sidebar.active .menu > ul > li > a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sidebar.active .menu > ul > li > a .text {
+    position: absolute;
+    left: 70px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px;
+    border-radius: 4px;
+    color: #fff;
+    background-color: #000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+}
+.sidebar.active .menu > ul > li > a .text::after {
+    content: "";
+    position: absolute;
+    left: -6px;
+    top: 20%;
+    width: 20px;
+    height: 20px;
+    border-radius: 2px;
+    background-color: #000;
+    transform: rotate(45deg);
+    z-index: -1;
+}
+.sidebar.active .menu > ul > li > a:hover .text {
+    left: 50px;
+    opacity: 1;
+    visibility: visible;  
+}
+.sidebar.active .menu .sub-menu {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    width: 200px;
+    border-radius: 20px;
+    padding: 10px 20px;
+    border: 1px solid #f6f6f6;
+    background-color: #fff;
+    box-shadow: 0px 10px 8px rgba(0, 0, 0, 0.1);
+}
+/*============================================PROFILE MENU=============================================*/
+.action {
+    position: fixed;
+    right: 40px;
+    top: 25px;
+}
+.action .profile {
+    border-radius: 50%;
+    cursor: pointer;
+    height: 40px;
+    overflow: hidden;
+    position: relative;
+    width: 40px;
+}
+.action .icon  {
+    color: #333;
+    font-size: 25px;
+}
+.action .profile img {
+    width: 100%;
+    top: 0;
+    position: absolute;
+    object-fit: cover;
+    left: 0;
+    height: 100%;
+}
+.action .profile-menu {
+    background-color: #fff;
+    box-sizing: 0 5px 25px rgba(0,0,0,0.1);
+    border-radius: 15px;
+    padding: 10px 20px ;
+    position: absolute;
+    right: -20px;
+    width: 200px;
+    transition: 0.5s;
+    top: 120px;
+    visibility: hidden ;
+    opacity: 0;
+}
+.action .profile-menu.active {
+    opacity: 1;
+    top: 55px;
+    visibility: visible;
+
+}
+.action .profile-menu::before {
+    background-color: #fff;
+    content: '';
+    height: 20px;
+    position: absolute;
+    right: 30px;
+    transform: rotate(45deg);
+    top: -5px;
+    width: 20px;
+}
+.action .profile-menu h3 {
+    color: #555;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.6em;
+    padding: 20px 0px;
+    text-align: center;
+    width: 100%;
+}
+.action .profile-menu h3 div {
+    color: #818181;
+    font-size: 14px;
+    font-weight: 400;
+    border-bottom: solid 1px;
+}
+.action .profile-menu ul li {
+    align-items: left;
+    justify-content: left;
+    list-style: none;
+    padding: 10px 0px;
+}
+.action .profile-menu ul li img {
+    max-width: 20px;
+    margin-right: 10px;
+    opacity: 0.5;
+    transition: 0.5s;
+}
+.action .profile-menu ul li a {
+    display: inline-block;
+    color: #555;
+    font-size: 14px;
+    font-weight: 600;
+    padding-left: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s;
+
+}
+.action .profile-menu ul li:hover img {
+    opacity: 1;
+}
+.action .profile-menu ul li:hover a {
+    color: #000080;
+}
+/*=========================================DASHBOARD CONTENTS==========================================*/
+.content {
+     padding: 5px;
+     margin-right: 10px;
+    
+    
+    
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    align-items: center;
+    background-color: #000080;
+    border-radius: 10px;
+    height: 70px;
+    
+  
+    
+
+}
+.search i {
+    position: absolute;
+    color: #fff;
+    border-radius: 10px;
+    padding: 0 10px;
+}
+.search input {
+    border: none;
+    outline: none;
+    padding: 5px 10px;
+    border-radius: 5px ;
+    width: 300px;
+}
+.right-icons i {
+    padding: 90px;
+    cursor: pointer;
+    color: white;
+}
+.right-icons {
+    font-size: 20px;
+}
+.right-icons i:hover{
+    color: #c1bebe;
+}
+.content .dashboard-content {
+    display: flex;
+    justify-content: space-between;
+    grid-gap: 24px; 
+    margin-top: 10px;
+    width: 100%; 
+    color: #363949;
+    margin-bottom: 0;
+   
+}
+.content .dashboard-content > div {
+    border-radius: 20px;
+    background: white;
+    overflow-x: auto;
+    box-shadow:  0 2rem 3rem  rgba(132, 139, 200, 0.18);
+    
+}
+.content .announcements {
+    margin-top: 10px;
+    padding: 10px;
+    flex: 1;
+   
+
+}
+.dashboard-content .welcome {
+    height: 160px;
+    margin-top: 10px;
+    padding: 24px;
+    margin-bottom: 0;
+
+}
+.content  .announcements img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+}
+.content .announcements .updates {
+    background: white;
+    padding: 1.2rem;
+    border-radius: 2rem;
+    box-shadow:  0 2rem 3rem  rgba(132, 139, 200, 0.18);
+    font-size: 14px;
+    transition: all 300ms ease;
+}
+.content  .announcements .message {
+    font-size: 15px;
+   
+}
+.content .announcements .updates:hover {
+    box-shadow: none;
+}
+.content  .announcements .updates .update {
+    display: grid;
+    grid-template-columns: 2.6rem auto; 
+    margin-bottom: 1rem;
+    gap: 1rem;
+}
+.content .announcements h1 {
+    margin-bottom: 0.8rem;
+    text-align: center;
+}
+.content main .insights{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-gap: 24px;
+    margin-top: 36px;
+    margin-top: 0;
+}
+main .headers {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-left: 10px;
+    
+}
+
+main .headers h1 {
+    margin: 0; 
+}
+
+main .date {
+    display: flex;
+    align-items: left;
+}
+main .date input[type='date'] {
+    background: rgba(132, 139, 200, 0.18);
+    color: #363949;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 0.4rem;
+    border: 1px solid #ccc; /* Add a border for better visibility */
+}
+
+.content main h1 {
+    text-align: left;
+}
+.content main .insights li{
+    padding: 24px;
+    background: #f6f6f9;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    grid-gap: 24px;
+    cursor: pointer;
+}
+
+.content main .insights li .bx{
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    font-size: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content main .insights li:nth-child(1) .bx{
+    background: #CFE8FF;
+    color:#1976D2;
+}
+
+.content main .insights li:nth-child(2) .bx{
+    background: #FFF2C6;
+    color: red;
+}
+
+.content main .insights li:nth-child(3) .bx{
+    background:  #BBF7D0;
+    color:#388E3C;
+}
+.content main .bottom-data{
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 24px;
+    margin-top: 24px;
+    width: 100%;
+    color: #363949;
+}
+
+.content main .bottom-data>div{
+    border-radius: 20px;
+    background:  #f6f6f9;
+    padding: 24px;
+    overflow-x: auto;
+}
+
+.content main .bottom-data .head{
+    display: flex;
+    align-items: center;
+    grid-gap: 16px;
+    margin-bottom: 24px;
+}
+
+.content main .bottom-data .head h3{
+    margin-right: auto;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.content main .bottom-data .head .bx{
+    cursor: pointer;
+    width: 30px;
+}
+
+.content main .bottom-data .orders{
+    flex-grow: 1;
+    flex-basis: 500px;
+}
+
+.content main .bottom-data .orders table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.content main .bottom-data .orders table th{
+    padding-bottom: 12px;
+    font-size: 13px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.content main .bottom-data .orders table td{
+    padding: 16px 0;
+}
+
+.content main .bottom-data .orders table tr td:first-child{
+    display: flex;
+    align-items: center;
+    grid-gap: 12px;
+    padding-left: 6px;
+}
+
+.content main .bottom-data .orders table td img{
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.content main .bottom-data .orders table tbody tr{
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.content main .bottom-data .orders table tbody tr:hover{
+    background: #eee;
+}
+
+.content main .bottom-data .orders table tr td .status{
+    font-size: 10px;
+    padding: 6px 16px;
+    color:  #f6f6f9;;
+    border-radius: 20px;
+    font-weight: 700;
+}
+
+.content main .bottom-data .orders table tr td .status.completed{
+    background:#388E3C;
+}
+
+.content main .bottom-data .orders table tr td .status.process{
+    background: #1976D2;
+}
+
+.content main .bottom-data .orders table tr td .status.pending{
+    background: #FBC02D;
+}
+
+.content main .bottom-data .reminders{
+    flex-grow: 1;
+    flex-basis: 300px;
+}
+
+.content main .bottom-data .reminders .task-list{
+    width: 100%;
+}
+
+.content main .bottom-data .reminders .task-list li{
+    width: 100%;
+    margin-bottom: 16px;
+    background: #eee;
+    padding: 14px 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content main .bottom-data .reminders .task-list li .task-title{
+    display: flex;
+    align-items: center;
+}
+
+.content main .bottom-data .reminders .task-list li .task-title p{
+    margin-left: 6px;
+}
+
+.content main .bottom-data .reminders .task-list li .bx{
+  cursor: pointer;  
+}
+
+.content main .bottom-data .reminders .task-list li.completed{
+    border-left: 10px solid  #388E3C;
+}
+
+.content main .bottom-data .reminders .task-list li.not-completed{
+    border-left: 10px solid #D32F2F;
+}
+
+.content main .bottom-data .reminders .task-list li:last-child{
+   margin-bottom: 0;
+}
